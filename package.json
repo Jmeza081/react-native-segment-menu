@@ -1,0 +1,32 @@
+{
+  "name": "react-native-segment-menu",
+  "version": "1.0.0",
+  "description": "A cross-platform react-native segmented menu component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jmeza081/react-native-segment-menu.git"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "ui",
+    "cross-platform",
+    "mobile",
+    "component"
+  ],
+  "author": "Jesse Meza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jmeza081/react-native-segment-menu/issues"
+  },
+  "homepage": "https://github.com/Jmeza081/react-native-segment-menu#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
