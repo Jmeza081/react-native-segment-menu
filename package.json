@@ -2,7 +2,7 @@
     "name": "react-native-segment-menu",
     "version": "1.0.0",
     "description": "A cross-platform react-native segmented menu component",
-    "main": "index.js",
+    "main": "src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -20,6 +20,10 @@
     ],
     "author": "Jesse Meza",
     "license": "MIT",
+    "peerDependencies": {
+        "react": ">= 15.x",
+        "react-native": ">= 0.50.x"
+    },
     "bugs": {
         "url": "https://github.com/Jmeza081/react-native-segment-menu/issues"
     },
@@ -31,6 +35,7 @@
     },
     "devDependencies": {
         "babel-eslint": "^10.0.1",
+        "babel-preset-react-native": "^4.0.1",
         "eslint": "^5.10.0",
         "eslint-plugin-react": "^7.11.1",
         "eslint-plugin-react-native": "^3.5.0",
