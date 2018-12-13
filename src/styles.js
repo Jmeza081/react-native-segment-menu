@@ -1,5 +1,4 @@
 import { StyleSheet, Dimensions } from 'react-native';
-// TODO: This should come from else where. like common config
 const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
