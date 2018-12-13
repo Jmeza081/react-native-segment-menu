@@ -47,6 +47,8 @@ _Looking for code to the demo provided?_ See the `example/` directory for the so
 
 [Answer to question]
 
+## Setting Up Development Environment
+
 ## Contributing
 
 [Link to Guidelines]
