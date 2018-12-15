@@ -21,10 +21,10 @@
     "author": "Jesse Meza",
     "license": "MIT",
     "peerDependencies": {
+        "prop-types": "^15.6.1",
         "react": ">= 15.x",
         "react-native": ">= 0.50.x",
-        "react-native-animatable": "^1.2.4",
-        "prop-types": "^15.6.1"
+        "react-native-animatable": "^1.2.4"
     },
     "bugs": {
         "url": "https://github.com/Jmeza081/react-native-segment-menu/issues"
