@@ -49,6 +49,12 @@ _Looking for code to the demo provided?_ See the `example/` directory for the so
 
 ## Setting Up Development Environment
 
+Due to the long standing issue react-native's move to Metro bundler which doesnt support locally linked npm packages, the following work around is as follows (from [here](https://github.com/facebook/metro/issues/1#issuecomment-328140399)):
+
+1. `yarn link` within the dev npm project root directory.
+2. `yarn link react-native-segment-menu` within the example root directory.
+3. `react-native start --config ../../../../rn-cli-config.js` to start packager with custom config
+
 ## Contributing
 
 [Link to Guidelines]
