@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
     parentMenuContainer: {
         flexDirection: 'row',
-        backgroundColor: '#000000',
+        backgroundColor: '#000',
         height: 80,
         paddingHorizontal: 10,
     },

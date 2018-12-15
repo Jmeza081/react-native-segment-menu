@@ -5,7 +5,7 @@ import * as Animatable from 'react-native-animatable';
 import PropTypes from 'prop-types';
 
 //TODO: Add prop type validation to this component.
-const triangleHeight = 12;
+const triangleHeight = 10;
 
 export default class SegmentMenu extends Component {
     static propTypes = {
