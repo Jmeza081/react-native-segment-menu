@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         shadowRadius: 3,
-        shadowOffset: { width: 0, height: 5 },
+        shadowOffset: { width: 0, height: -3 },
         shadowOpacity: 0.3,
     },
     textMenuStyles: {
