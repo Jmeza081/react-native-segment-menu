@@ -80,21 +80,121 @@ export default class App extends Component<{}> {
         );
 
         const dataTest = [
-            { id: 'Submit New', icon: 'music', subMenuComponent: myProjects },
             {
-                id: 'My Account',
-                icon: 'user',
-                subMenuComponent: <Text style={{ color: 'white' }}>Test2</Text>,
+                menuTrigger: (
+                    <View
+                        style={{
+                            flexDirection: 'column',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                            paddingBottom: 8,
+                        }}
+                    >
+                        <Icon name={'clock'} size={25} color={palette.neutral.white} />
+                        <Text
+                            style={{
+                                color: '#FFFFFF',
+                                fontSize: 10,
+                                paddingTop: 5,
+                                textAlign: 'center',
+                                fontFamily: 'Lora-Regular',
+                            }}
+                        >
+                            5 Minute Reads
+                        </Text>
+                    </View>
+                ),
+                subMenuComponent: myProjects,
             },
             {
-                id: 'My Projects',
-                icon: 'inbox',
-                subMenuComponent: <Text style={{ color: 'white' }}>Test3</Text>,
+                menuTrigger: (
+                    <View
+                        style={{
+                            flexDirection: 'column',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                            paddingBottom: 8,
+                        }}
+                    >
+                        <Icon
+                            name={'food-apple'}
+                            size={25}
+                            color={palette.neutral.white}
+                        />
+                        <Text
+                            style={{
+                                color: '#FFFFFF',
+                                fontSize: 10,
+                                paddingTop: 5,
+                                textAlign: 'center',
+                                fontFamily: 'Lora-Regular',
+                            }}
+                        >
+                            Fruit Only
+                        </Text>
+                    </View>
+                ),
+                subMenuComponent: myProjects,
             },
             {
-                id: 'View Directos',
-                icon: 'video',
-                subMenuComponent: <Text style={{ color: 'white' }}>Test4</Text>,
+                menuTrigger: (
+                    <View
+                        style={{
+                            flexDirection: 'column',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                            paddingBottom: 8,
+                        }}
+                    >
+                        <Icon
+                            name={'food-croissant'}
+                            size={25}
+                            color={palette.neutral.white}
+                        />
+                        <Text
+                            style={{
+                                color: '#FFFFFF',
+                                fontSize: 10,
+                                paddingTop: 5,
+                                textAlign: 'center',
+                                fontFamily: 'Lora-Regular',
+                            }}
+                        >
+                            Dessert
+                        </Text>
+                    </View>
+                ),
+                subMenuComponent: myProjects,
+            },
+            {
+                menuTrigger: (
+                    <View
+                        style={{
+                            flexDirection: 'column',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                            paddingBottom: 8,
+                        }}
+                    >
+                        <Icon
+                            name={'bottle-wine'}
+                            size={25}
+                            color={palette.neutral.white}
+                        />
+                        <Text
+                            style={{
+                                color: '#FFFFFF',
+                                fontSize: 10,
+                                paddingTop: 5,
+                                textAlign: 'center',
+                                fontFamily: 'Lora-Regular',
+                            }}
+                        >
+                            Great With Wine
+                        </Text>
+                    </View>
+                ),
+                subMenuComponent: myProjects,
             },
         ];
 
@@ -115,6 +215,11 @@ export default class App extends Component<{}> {
                         height: 60,
                         backgroundColor: palette.surface,
                         justifyContent: 'center',
+                        shadowColor: palette.neutral.black,
+                        shadowOffset: { width: 0, height: 3 },
+                        shadowOpacity: 1,
+                        shadowRadius: 3,
+                        zIndex: 1,
                     }}
                 >
                     <View
@@ -134,7 +239,7 @@ export default class App extends Component<{}> {
                             Foodinary
                         </Text>
                         <Icon
-                            name={'account-circle'}
+                            name={'silverware'}
                             color={palette.neutral.white}
                             size={25}
                         />
@@ -142,7 +247,12 @@ export default class App extends Component<{}> {
                 </View>
 
                 <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-                    <SegmentMenu data={dataTest} />
+                    <SegmentMenu
+                        data={dataTest}
+                        segmentPointerColor={palette.accent}
+                        subMenuBackgroundColor={palette.surface}
+                        parentMenuBackgroundColor={palette.surface}
+                    />
                 </View>
             </ImageBackground>
         );
