@@ -10,10 +10,16 @@ const triangleHeight = 10;
 export default class SegmentMenu extends Component {
     static propTypes = {
         data: PropTypes.arrayOf(PropTypes.object),
+        segmentPointerColor: PropTypes.string,
+        subMenuBackgroundColor: PropTypes.string,
+        parentMenuBackgroundColor: PropTypes.string,
     };
 
     static defaultProps = {
         data: [], // Nothing for now.
+        segmentPointerColor: '#262626',
+        subMenuBackgroundColor: '#262626',
+        parentMenuBackgroundColor: '#262626',
     };
 
     constructor(props) {
@@ -41,6 +47,8 @@ export default class SegmentMenu extends Component {
         these options will cause the segment menu to render.
     */
     renderParentMenu() {
+        const { parentMenuBackgroundColor } = this.props;
+
         // Go through every segment child and get its title for rending parent menu opts.
         const menuOptions = this.props.data.map((child, index) => {
             return (
@@ -49,16 +57,21 @@ export default class SegmentMenu extends Component {
                     onPress={() => this.updateIndex(index)}
                     style={styles.parentMenuColumnContainer}
                 >
-                    <View style={styles.iconContainer}>
-                        <Text style={styles.textMenuStyles}>(Icon)</Text>
-                    </View>
-
-                    <Text style={styles.textMenuStyles}>{child.id}</Text>
+                    {child.menuTrigger}
                 </TouchableOpacity>
             );
         });
 
-        return <View style={styles.parentMenuContainer}>{menuOptions}</View>;
+        return (
+            <View
+                style={[
+                    styles.parentMenuContainer,
+                    { backgroundColor: parentMenuBackgroundColor },
+                ]}
+            >
+                {menuOptions}
+            </View>
+        );
     }
 
     /**
@@ -67,6 +80,7 @@ export default class SegmentMenu extends Component {
     */
     renderPointer() {
         const { childrenIndices, activeIndex } = this.state;
+        const { segmentPointerColor } = this.props;
 
         // Definition of triangle shape using CSS shape styling tactics.
         const triangleStyling = {
@@ -78,7 +92,7 @@ export default class SegmentMenu extends Component {
                 borderRightColor: 'transparent',
 
                 borderBottomWidth: triangleHeight,
-                borderBottomColor: '#262626',
+                borderBottomColor: segmentPointerColor,
             },
         };
 
@@ -106,7 +120,7 @@ export default class SegmentMenu extends Component {
     */
     renderActiveSegment() {
         const { activeIndex } = this.state;
-        const { data } = this.props;
+        const { data, subMenuBackgroundColor } = this.props;
 
         // Define dynamic positioning based on props passed in.
         const dynamicStyling = {
@@ -127,7 +141,12 @@ export default class SegmentMenu extends Component {
                 style={[styles.submenuContainer, dynamicStyling.submenuPositioning]}
             >
                 {this.renderPointer()}
-                <View style={styles.roundedRectangle}>
+                <View
+                    style={[
+                        styles.roundedRectangle,
+                        { backgroundColor: subMenuBackgroundColor },
+                    ]}
+                >
                     {/*Render user defined sub-menu content*/}
                     {data[activeIndex].subMenuComponent}
                 </View>
