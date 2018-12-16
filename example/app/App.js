@@ -5,8 +5,17 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    ImageBackground,
+    StatusBar,
+} from 'react-native';
 import SegmentMenu from 'react-native-segment-menu';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { palette } from './config/colors';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -93,11 +102,46 @@ export default class App extends Component<{}> {
             <ImageBackground
                 source={{
                     uri:
-                        'https://images.unsplash.com/photo-1508881598441-324f3974994b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2aef1e2f3895c40e891654ae51f9c1e3&auto=format&fit=crop&w=1950&q=80',
+                        'https://images.unsplash.com/photo-1532980400857-e8d9d275d858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
                 }}
+                opacity={0.5}
                 style={[{ flex: 1 }, { backgroundColor: 'black' }]}
             >
-                <View style={{ flexDirection: 'column', alignItems: 'center', top: 100 }}>
+                <View style={{ height: 20, backgroundColor: palette.surface }}>
+                    <StatusBar backgroundColor="blue" barStyle="light-content" />
+                </View>
+                <View
+                    style={{
+                        height: 60,
+                        backgroundColor: palette.surface,
+                        justifyContent: 'center',
+                    }}
+                >
+                    <View
+                        style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            marginHorizontal: 10,
+                        }}
+                    >
+                        <Text
+                            style={{
+                                color: palette.neutral.white,
+                                fontFamily: 'Merriweather-BoldItalic',
+                            }}
+                        >
+                            Foodinary
+                        </Text>
+                        <Icon
+                            name={'account-circle'}
+                            color={palette.neutral.white}
+                            size={25}
+                        />
+                    </View>
+                </View>
+
+                <View style={{ flexDirection: 'column', alignItems: 'center' }}>
                     <SegmentMenu data={dataTest} />
                 </View>
             </ImageBackground>
