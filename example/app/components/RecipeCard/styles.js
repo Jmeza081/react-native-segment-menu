@@ -17,14 +17,15 @@ const styles = StyleSheet.create({
         backgroundColor: palette.surface,
     },
     actionArea: {
-        flex: 0.5,
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         backgroundColor: palette.surface,
     },
     iconContainer: {
         paddingHorizontal: '2%',
+        paddingBottom: '2%',
     },
     prepTimeBadge: {
         top: '6%',
