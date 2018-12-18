@@ -53,7 +53,7 @@ Due to the long standing issue react-native's move to Metro bundler which doesnt
 
 1. `yarn link` within the dev npm project root directory.
 2. `yarn link react-native-segment-menu` within the example root directory.
-3. `react-native start --config ../../../../rn-cli-config.js` to start packager with custom config
+3. `yarn start-dev` to start packager with custom config
 
 ## Contributing
 
