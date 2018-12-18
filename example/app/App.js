@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ImageBackground, StatusBar } from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    View,
+    ImageBackground,
+    StatusBar,
+    ScrollView,
+} from 'react-native';
 import SegmentMenu from 'react-native-segment-menu';
 import HeaderBar from './components/HeaderBar';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as Animatable from 'react-native-animatable';
 import { palette } from './config/colors';
+import RecipeCard from './components/RecipeCard/RecipeCard';
 
 const BACKGROUND_IMAGE =
     'https://images.unsplash.com/photo-1532980400857-e8d9d275d858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80';
@@ -117,6 +125,12 @@ export default class App extends Component {
                         />
                     </Animatable.View>
                 )}
+                <ScrollView
+                    style={{ height: 900 }}
+                    contentContainerStyle={{ alignItems: 'center', paddingTop: 20 }}
+                >
+                    <RecipeCard />
+                </ScrollView>
             </ImageBackground>
         );
     }
