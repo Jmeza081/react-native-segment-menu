@@ -13,6 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as Animatable from 'react-native-animatable';
 import { palette } from './config/colors';
 import RecipeCard from './components/RecipeCard/RecipeCard';
+import dummyRecipes from './config/dummyCardData';
 
 const BACKGROUND_IMAGE =
     'https://images.unsplash.com/photo-1532980400857-e8d9d275d858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80';
@@ -62,6 +63,20 @@ export default class App extends Component {
                 <StatusBar backgroundColor="blue" barStyle="light-content" />
             </View>
         );
+    };
+
+    renderRecipeCards = () => {
+        return dummyRecipes.map((cardData, index) => {
+            return (
+                <Animatable.View
+                    key={index}
+                    animation={'fadeInUpBig'}
+                    delay={index * 100}
+                >
+                    <RecipeCard recipeCardData={cardData} />
+                </Animatable.View>
+            );
+        });
     };
 
     render() {
@@ -129,7 +144,7 @@ export default class App extends Component {
                     style={{ height: 900 }}
                     contentContainerStyle={{ alignItems: 'center', paddingTop: 20 }}
                 >
-                    <RecipeCard />
+                    {this.renderRecipeCards()}
                 </ScrollView>
             </ImageBackground>
         );
