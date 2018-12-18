@@ -13,7 +13,9 @@
 
 ## Demo
 
-[2 gifs, one iOS on Android provided here]
+| iOS                                                                                                                  | Android         |
+| -------------------------------------------------------------------------------------------------------------------- | --------------- |
+| ![ios_example](https://user-images.githubusercontent.com/16481834/50187198-fa7ef700-02e2-11e9-8689-bd9de08eff78.gif) | [Sample Needed] |
 
 ## Installation
 
