@@ -60,7 +60,7 @@ export default class App extends Component {
     renderWrappedStatusBar = () => {
         return (
             <View style={styles.statusBar}>
-                <StatusBar backgroundColor="blue" barStyle="light-content" />
+                <StatusBar backgroundColor={palette.surface} barStyle="light-content" />
             </View>
         );
     };
