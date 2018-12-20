@@ -9,7 +9,7 @@
 -   Cross-platform
 -   Javascript only
 -   Fully Customizable
--   Animated via `react-native-animatable` as peer-dependency
+-   Animated via `react-native-animatable` as a peer-dependency
 
 ## Demo
 
@@ -35,7 +35,7 @@ yarn add packageName
 [Code Sample of basic usage]
 ```
 
-_Looking for code to the demo provided?_ See the `example/` directory for the source code.
+_Looking for the code to the demo provided?_ See the `example/` directory for the source code.
 
 ## Prop Types
 
@@ -51,7 +51,7 @@ _Looking for code to the demo provided?_ See the `example/` directory for the so
 
 ## Setting Up Development Environment
 
-Due to the long standing issue react-native's move to Metro bundler which doesnt support locally linked npm packages, the following work around is as follows (from [here](https://github.com/facebook/metro/issues/1#issuecomment-328140399)):
+Due to a long standing issue react-native's move to Metro bundler, the following work around is necessary to test this package locally. You can read more about the underlying issue from ([here](https://github.com/facebook/metro/issues/1#issuecomment-328140399)).
 
 1. `yarn link` within the dev npm project root directory.
 2. `yarn link react-native-segment-menu` within the example root directory.
